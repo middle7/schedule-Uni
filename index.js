@@ -76,6 +76,7 @@ app.get("/schedSetng",(req,res) =>{
     })
 })
 
+
 app.get("/authSetng",async(req,res)=>{
     if(!req.cookies.token){
         res.redirect("/gear")
@@ -90,7 +91,8 @@ app.get("/authSetng",async(req,res)=>{
 
 const start = () => {
     try{
-        const uri = "mongodb+srv://kumu:8J45H6M2WDzhn8PO@kumu.vfuoppu.mongodb.net/itf"
+        const uri = "mongodb+srv://middle7education:kP6Drvgvqsj4WGIe@cluster0.rar9c.mongodb.net/itf"
+        // const uri1 = "mongodb+srv://kumu:8J45H6M2WDzhn8PO@kumu.vfuoppu.mongodb.net/itf"
         mongoose.set("strictQuery",false)
         mongoose.connect(uri)
 
@@ -104,4 +106,4 @@ const start = () => {
 start()
 
 
-app.listen(4100,()=>console.log("Ulandi"))
+app.listen(4100,()=>console.log("Connected"))
