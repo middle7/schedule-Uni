@@ -10,6 +10,9 @@ import session from "express-session"
 import varMiddleware from "./middleware/var.js"
 import cookieParser from "cookie-parser"
 
+import * as dotenv from 'dotenv'
+
+dotenv.config()
 
 
 // 
@@ -91,10 +94,10 @@ app.get("/authSetng",async(req,res)=>{
 
 const start = () => {
     try{
-        const uri = "mongodb+srv://middle7education:kP6Drvgvqsj4WGIe@cluster0.rar9c.mongodb.net/itf"
+        // const uri = "mongodb+srv://middle7education:kP6Drvgvqsj4WGIe@cluster0.rar9c.mongodb.net/itf"
         // const uri1 = "mongodb+srv://kumu:8J45H6M2WDzhn8PO@kumu.vfuoppu.mongodb.net/itf"
         mongoose.set("strictQuery",false)
-        mongoose.connect(uri)
+        mongoose.connect(process.env.MONGO_URI)
 
         mongoose.connection.on("connected",() => {
             console.log("Ulandi");
